@@ -22,7 +22,6 @@ def home(request):
         'featured_2': featured_2,
         'baseUrl': request.build_absolute_uri('/')
     }
-    print('Hello World')
     return render(request, 'review/home.html', context)
 
 
