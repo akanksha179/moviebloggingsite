@@ -1,0 +1,69 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+    <main tabindex="-1" id="app-wrapper" class="appWrapper">
+    <div class="page">
+        <h3>{{ heading }}</h3>
+        <div role="list" class="ctaRow__1OSN-">
+            {% for post in posts %}
+                <div aria-label="" role="listitem" class="ctaCard__2UObj green__8gZWX">
+                <span>
+                    <a href="{% url 'review' %}{{ post.id }}" class="focusStyle__aCHnr" aria-label="Featured" tabindex="0" native="false">
+                        <span tabindex="-1">
+                            <div class="ctaBody__2EZoJ">
+                                <h2>{{ post.title }}</h2>
+                                <h3 class="cardBody__2MRIQ">{{ post.single_line_description }}</h3>
+                                <h3 class="cardLink__1EGuS">Rating: {{ post.rating }}/10</h3>
+                            </div>
+                        </span>
+                    </a>
+                </span>
+            </div>
+                <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                <span class="linkWrapper__2Vjb6">
+                    <a href="review/{{ post.id }}" tabindex="0" native="false">
+                        <span tabindex="-1" class="innerCardContainer__2pSan">
+                            <div class="sessionImage__3pQAZ">
+                                <img loading="lazy" src="{{ baseUrl }}{{ post.poster }}" alt="{{ post.title }}">
+                            </div>
+                            <div class="sessionItemRow__36S6E">
+                                <section class="sessionInfo__2v7BZ">
+                                    <div class="overline__c9lIn">
+                                        <span>
+                                            {{ post.date_published|date:"F d, Y" }}
+                                        </span>
+                                        <div class="reserveControls__1rSnD">
+                                            <div class="iconRow__2uRxN">
+                                                <button class="fab__3aFFB fabLowered__2rXPw fabNotRaised__mnfN_ bookmark__2jV22"
+                                                        aria-pressed="false"
+                                                        aria-label="Bookmark for Developer Keynote">
+                                                    <span style="pointer-events: none;">
+                                                        <div>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+</svg>
+                                                        </div>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>{{ post.title }}</h4>
+                                    <div class="sessionItemMeta__2AFSB">
+                                        <span class="sessionMeta__ZeSSn">
+                                            <span>
+                                                {{ post.author|capfirst }}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </section>
+                            </div>
+                        </span>
+                    </a>
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

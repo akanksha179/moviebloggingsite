@@ -1,0 +1,44 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+<main tabindex="-1" id="app-wrapper" class="appWrapper">
+    <div class="page">
+        <h3>{{ heading }}</h3>
+        <div role="list" class="ctaRow__1OSN-">
+            {% for post in posts %}
+                <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                        <span class="linkWrapper__2Vjb6">
+                            <a href="review/{{ post.id }}" tabindex="0" native="false">
+                                <span tabindex="-1" class="innerCardContainer__2pSan">
+                                    <div class="sessionImage__3pQAZ">
+                                        <img loading="lazy" src="{{ baseUrl }}{{ post.poster }}" alt="{{ post.title }}">
+                                    </div>
+                                    <div class="sessionItemRow__36S6E">
+                                        <section class="sessionInfo__2v7BZ">
+                                            <div class="overline__c9lIn">
+                                                <span>
+                                                    {{ post.date_published|date:"F d, Y" }}
+                                                </span>
+                                            </div>
+                                            <h4>
+                                                {{ post.title }}
+                                            </h4>
+
+                                            <div class="sessionItemMeta__2AFSB">
+                                                <span class="sessionMeta__ZeSSn">
+                                                    <span>
+                                                        {{ post.author|capfirst }}
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </span>
+                            </a>
+                        </span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

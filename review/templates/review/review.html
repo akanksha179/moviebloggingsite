@@ -1,0 +1,69 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+<main tabindex="-1" id="app-wrapper" class="appWrapper">
+    <div class="videoPlayer__2hatx closed__1_qIq" aria-label="video" aria-model="false">
+        <div style="display: none;"></div>
+    </div>
+    <div class="wrapper__1a28b">
+        <div class="cardBanner__1BjOu">
+            <div class="videoContainer__VyHQw keynotePlaying__2h5wY">
+                <div class="videoPlayerWrapper__26Rrv">
+                    <div>
+                        <img alt="{{ review.title }}" class="videoPlayerImage__6qeND"
+                             src="{{ baseUrl }}{{ review.poster }}" loading="lazy">
+                        <div class="keynoteCta__3yKNI">
+                            <h3>{{ review.title }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iconBar__xC7Tl">
+            <span class="eyebrow">{{ review.date_published|date:"F d, Y" }}</span>
+            <div class="iconButtons__yXKac">
+                <div class="iconRow__2uRxN">
+
+                </div>
+            </div>
+        </div>
+        <div class="grid sessionDetails__1z5kA">
+            <div class="col-6-lg col-4"><h1>{{ review.title }}</h1>
+                <span class="text--small tags__26YBU">{{ review.rating }}/10</span>
+                <span class="text--small tags__26YBU">{{ review.author|capfirst }}</span>
+            </div>
+        </div>
+        <div class="grid sessionDetails__1z5kA">
+            <div class="col-6-lg col-4">
+                <div class="sessionBlock__zIc7p"><h2>Review</h2>
+                    <p class="body--large">
+                        {{ review.content }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-5-lg col-offset-7-lg col-4">
+                <div class="sessionBlock__zIc7p">
+                    <h2>Cast and Crew</h2>
+                    {% for member in cast %}
+                    <a href="{% url 'cast' %}{{ member.id }}" target="_blank">
+                        <div class="speakerInfoWrapper__3LzJR speakerInfoWrapperDetail__GwF_E" role="button" tabindex="0">
+                            <section class="speakerDetail__HGLWv">
+                                <div>
+                                    <div class="image__hQgS- imageDetail__3v-Lw">
+                                        <img alt="Photo of {{ member.name }}" src="{{ baseUrl }}{{ member.cast_image }}" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="infoDetail__W6BFn">
+                                    <h6>{{ member.name }}</h6>
+                                    <span class="body--small"></span>
+                                </div>
+                            </section>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

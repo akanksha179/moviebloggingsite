@@ -1,0 +1,75 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+<main tabindex="-1" id="app-wrapper" class="appWrapper">
+    <aside id="dialog" role="dialog" class="modal__16aMA modalDialog__35TUW">
+        <div class="modalMain__3U5Dg">
+            <div class="modalContent__Ln9fE" style="max-width: 90%;">
+                <div></div>
+                <button class="fab__3aFFB fabLowered__2rXPw fabNotRaised__mnfN_ closeButton__14rms"
+                        aria-label="Close modal">
+                    <i aria-hidden="true" class="material-icons fabIcon__38Zs_">close</i>
+                    <span
+                            style="pointer-events: none;"></span></button>
+            </div>
+        </div>
+    </aside>
+    <aside id="dialog" role="dialog" class="modal__16aMA modalDialog__35TUW">
+        <div class="modalMain__3U5Dg">
+            <div class="modalContent__Ln9fE" style="max-width: 90%;">
+                <div></div>
+                <button class="fab__3aFFB fabLowered__2rXPw fabNotRaised__mnfN_ closeButton__14rms"
+                        aria-label="Close modal"><i aria-hidden="true"
+                                                    class="material-icons fabIcon__38Zs_">close</i><span
+                        style="pointer-events: none;"></span></button>
+            </div>
+        </div>
+    </aside>
+    <div class="videoPlayer__2hatx closed__1_qIq" aria-label="video" aria-model="false">
+        <div style="display: none;"></div>
+    </div>
+    <div class="wrapper__1a28b">
+        <div class="iconBar__xC7Tl">
+            <div class="iconButtons__yXKac">
+                <div class="iconRow__2uRxN"></div>
+            </div>
+        </div>
+        <div class="grid sessionDetails__1z5kA">
+            <div class="col-6-lg col-4">
+                <h1>{{cast.name}}</h1>
+            </div>
+        </div>
+        <div class="grid sessionDetails__1z5kA">
+            <div class="col-6-lg col-4">
+                <div class="sessionBlock__zIc7p">
+                    <p class="body--medium">
+                       {{cast.description}}
+                    </p>
+                </div>
+            </div>
+            <div class="col-5-lg col-offset-7-lg col-4">
+                <div class="sessionBlock__zIc7p">
+                    <h2>Quick facts</h2>
+
+                    <div class="speakerInfoWrapper__3LzJR speakerInfoWrapperDetail__GwF_E" role="button" tabindex="0">
+                        <section class="speakerDetail__HGLWv">
+                            <div>
+                                <div class="image__hQgS- imageDetail__3v-Lw">
+                                    <img src="{{ baseUrl }}{{ cast.cast_image }}" alt={{ cast.name }} />
+                                        </div>
+                            </div>
+                            <div class="infoDetail__W6BFn">
+                                <h6> {{cast.name}}</h6>
+                                <span class="body--small"></span>
+                            </div>
+                        </section>
+                    </div>
+                    <p>Birthdate: {{cast.birthdate}}</p>
+                    <p>Best Movie: {{cast.best_work}}</p>
+                    <p>Achievements: {{cast.achievements}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

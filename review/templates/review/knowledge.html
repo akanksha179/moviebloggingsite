@@ -1,0 +1,20 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+    <main tabindex="-1" id="app-wrapper" class="appWrapper">
+    <div class="page">
+        <div class="terms__3O6oe" id="terms">
+            <h3>Knowledge Section</h3>
+            <br>
+            <ul class="termList__2rvco">
+                {% for paragraph in paragraphs %}
+                    <li class="termItem__CSvn9">
+                            {{ paragraph }}
+                    </li>
+                    <br/>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}

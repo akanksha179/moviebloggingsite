@@ -1,0 +1,264 @@
+{% extends 'review/base.html' %}
+{% block main %}
+{% load static %}
+<main tabindex="-1" id="app-wrapper" class="appWrapper homepageLayout__1i8pL">
+    <div class="home__108pG page">
+        <div class="pageTitle__1DgP7">
+            <div class="pageTitle__3Uk4g">
+                <h4>Welcome to</h4>
+                <h1 class="pageSubtitle__2AawY  ">Films for Art</h1>
+            </div>
+        </div>
+        <div role="list" class="ctaRow__1OSN-">
+            <div aria-label="" role="listitem" class="ctaCard__2UObj green__8gZWX">
+                <span>
+                    <span tabindex="-1">
+                        <div class="ctaBody__2EZoJ">
+                            <h2>{{ top_featured.title }}</h2>
+                            <h3 class="cardBody__2MRIQ">{{ top_featured.single_line_description }}</h3>
+                            <h3 class="cardLink__1EGuS">Rating: {{ top_featured.rating }}/10</h3>
+                        </div>
+                    </span>
+                </span>
+            </div>
+            <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                <span class="linkWrapper__2Vjb6">
+                    <a href="{% url 'review' %}{{ top_featured.id }}" tabindex="0" native="false">
+                        <span tabindex="-1" class="innerCardContainer__2pSan">
+                            <div class="sessionImage__3pQAZ">
+                                <img loading="lazy" src="{{ baseUrl }}{{ top_featured.poster }}" alt="{{ top_featured.title }}">
+                            </div>
+                            <div class="sessionItemRow__36S6E">
+                                <section class="sessionInfo__2v7BZ">
+                                    <div class="overline__c9lIn">
+                                        <span>
+                                            {{ top_featured.date_published|date:"F d, Y" }}
+                                        </span>
+                                        <div class="reserveControls__1rSnD">
+                                            <div class="iconRow__2uRxN">
+                                                <button class="fab__3aFFB fabLowered__2rXPw fabNotRaised__mnfN_ bookmark__2jV22"
+                                                        aria-pressed="false"
+                                                        aria-label="Bookmark for Developer Keynote">
+                                                    <span style="pointer-events: none;">
+                                                        <div>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+</svg>
+                                                        </div>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>{{ top_featured.title }}</h4>
+                                    <div class="sessionItemMeta__2AFSB">
+                                        <span class="sessionMeta__ZeSSn">
+                                            <span>
+                                                {{ top_featured.author|capfirst }}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </section>
+                            </div>
+                        </span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="filterContainer__1-8zC">
+            <div class="filterHeader__2oSOd">
+                <h4 aria-label="Links to All content page with selected filter turned on" class="-mobileHidden__3dmt1">
+                    Filter by genre
+                </h4>
+                <h4 class="-desktopHidden__vjvHZ">
+                    Filter by genre
+                </h4>
+            </div>
+            <div class="productRow__1EOVq grid">
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/2" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Action</h5>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/3" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Comedy</h5>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/4" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Drama</h5>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/5" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Horror</h5>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/6" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Romance</h5>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/7" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Sci-fi</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/8" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>Thriller</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="productItem__2YQtn col-2 col-1-md">
+                    <a href="filter/1" rel="noopener" aria-label="Accessibility" tabindex="0">
+                        <div class="productIcon__doUhh">
+                            <h5>All</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="contentRow__lWXYx">
+            <div class="contentRowHeader__3qsns">
+                <h4>Give it a read...</h4>
+            </div>
+            <div class="grid__5mHuX">
+                <div aria-label="">
+                    <a class="focusStyle__aCHnr" href="{% url 'knowledge' %}" rel="noopener"
+                       aria-label="Knowledge Section"
+                       tabindex="0">
+                        <div class="ctaBody__1Feyy">
+                            <h2></h2>
+                            <h5 class="cardBody__1WrZv">Visit our Knowledge section to get to know some amazing things
+                                about Films
+                            </h5>
+                            <div class="cardLink__15V7U">
+                                <h5>Knowledge Section
+                                    <i aria-hidden="true" class="material-icons">open_in_new</i>
+                                </h5>
+                            </div>
+                        </div>
+                        <span class="screenReaderOnly"></span>
+                    </a>
+                </div>
+                <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                        <span class="linkWrapper__2Vjb6">
+                            <a href="" tabindex="0" native="false">
+                                <span tabindex="-1" class="innerCardContainer__2pSan">
+                                    <div class="sessionImage__3pQAZ">
+                                        <img loading="lazy" src="{% static 'review/images/site-property/knowledge.jpg' %}" alt="Knowledge Section">
+                                    </div>
+                                </span>
+                            </a>
+                        </span>
+                </div>
+                <div aria-label="Weekly Recommendation" class="communityCard__3eAC1 yellow__1ToAM">
+                    <a class="focusStyle__aCHnr" href="{% url 'weekly' %}" rel="noopener"
+                       aria-label="Weekly Recommendation" tabindex="0">
+                        <div class="ctaBody__1Feyy">
+                            <h2>Weekly Recommendation!
+                            </h2>
+                            <br>
+                            <h6 class="cardBody__1WrZv">Plan a chill weekend by choosing movies/shows from across the
+                                globe through our special curated weekly recommendation list!
+                            </h6>
+                            <div class="cardLink__15V7U">
+                                <h5>View recommendations
+                                    <i aria-hidden="true" class="material-icons">open_in_new</i>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <div class="circle__38o4t">
+                        <img src="{% static 'ffa_round.png' %}" loading="lazy">
+                    </div>
+                </div>
+                <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                        <span class="linkWrapper__2Vjb6">
+                            <a href="{% url 'review' %}{{ featured_1.id }}" tabindex="0" native="false">
+                                <span tabindex="-1" class="innerCardContainer__2pSan">
+                                    <div class="sessionImage__3pQAZ">
+                                        <img loading="lazy" src="{{ baseUrl }}{{ featured_1.poster }}" alt="{{ featured_1.title }}">
+                                    </div>
+                                    <div class="sessionItemRow__36S6E">
+                                        <section class="sessionInfo__2v7BZ">
+                                            <div class="overline__c9lIn">
+                                                <span>
+                                                    {{ featured_1.date_published|date:"F d, Y" }}
+                                                </span>
+                                            </div>
+                                            <h4>
+                                                {{ featured_1.title }}
+                                            </h4>
+
+                                            <div class="sessionItemMeta__2AFSB">
+                                                <span class="sessionMeta__ZeSSn">
+                                                    <span>
+                                                        {{ featured_1.author|capfirst }}
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </span>
+                            </a>
+                        </span>
+                </div>
+                <div role="listitem" class="sessionItem__15Y45 sessionItemCard__2N3aN">
+                        <span class="linkWrapper__2Vjb6">
+                            <a href="{% url 'review' %}{{ featured_2.id }}" tabindex="0" native="false">
+                                <span tabindex="-1" class="innerCardContainer__2pSan">
+                                    <div class="sessionImage__3pQAZ">
+                                        <img loading="lazy" src="{{ baseUrl }}{{ featured_2.poster }}" alt="{{ featured_2.title. }}">
+                                    </div>
+                                    <div class="sessionItemRow__36S6E">
+                                        <section class="sessionInfo__2v7BZ">
+                                            <div class="overline__c9lIn">
+                                                <span>
+                                                    {{ featured_2.date_published|date:"F d, Y" }}
+                                                </span>
+                                            </div>
+                                            <h4>
+                                                {{ featured_2.title }}
+                                            </h4>
+
+                                            <div class="sessionItemMeta__2AFSB">
+                                                <span class="sessionMeta__ZeSSn">
+                                                    <span>
+                                                        {{ featured_2.author|capfirst }}
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </span>
+                            </a>
+                        </span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
