@@ -2,10 +2,6 @@ from django.shortcuts import render
 from .models import Review, Genre, Knowledge, Cast
 
 
-def function():
-    pass
-
-
 # Create your views here.
 def review(request, get_id):
     data = Review.objects.get(id=get_id)
