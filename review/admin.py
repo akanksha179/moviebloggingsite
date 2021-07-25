@@ -1,6 +1,8 @@
 from django.contrib import admin
 from . import models
 
+# this is also a comment
+
 
 # Register your models here.
 class ReviewAdmin(admin.ModelAdmin):
