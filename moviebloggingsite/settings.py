@@ -77,11 +77,10 @@ WSGI_APPLICATION = 'moviebloggingsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movieblog',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'akanksha179$moviebloggingsite',
+        'USER': 'akanksha179',
+        'PASSWORD': '123aka456',
+        'HOST': 'akanksha179.mysql.pythonanywhere-services.com',
     }
 }
 
